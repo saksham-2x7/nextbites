@@ -1,0 +1,28 @@
+.search {
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 1.5rem;
+  padding: 0.7rem 1rem;
+  font: inherit;
+  color: var(--fg);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.search:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.25rem;
+}
+
+.empty {
+  padding: 2rem 0;
+  color: var(--muted);
+  text-align: center;
+}

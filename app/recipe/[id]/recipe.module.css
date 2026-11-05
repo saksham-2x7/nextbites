@@ -1,0 +1,49 @@
+.main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.back {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.emoji {
+  font-size: 4rem;
+  margin-top: 1.5rem;
+}
+
+.title {
+  margin: 0.5rem 0;
+  font-size: 2.25rem;
+}
+
+.meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: var(--muted);
+}
+
+.badge {
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.list {
+  padding-left: 1.4rem;
+  line-height: 1.7;
+}
+
+.list li {
+  margin-bottom: 0.4rem;
+}
