@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getRecipe, recipes } from "../../data/recipes";
@@ -7,11 +8,17 @@ export function generateStaticParams() {
   return recipes.map((recipe) => ({ id: String(recipe.id) }));
 }
 
-export default async function RecipePage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+type Props = { params: Promise<{ id: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const recipe = getRecipe(id);
+  return recipe
+    ? { title: recipe.title, description: recipe.description }
+    : { title: "Recipe not found" };
+}
+
+export default async function RecipePage({ params }: Props) {
   const { id } = await params;
   const recipe = getRecipe(id);
   if (!recipe) notFound();
