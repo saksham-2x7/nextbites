@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getRecipe } from "../../data/recipes";
+import { getRecipe, recipes } from "../../data/recipes";
 import styles from "./recipe.module.css";
+
+export function generateStaticParams() {
+  return recipes.map((recipe) => ({ id: String(recipe.id) }));
+}
 
 export default async function RecipePage({
   params,
