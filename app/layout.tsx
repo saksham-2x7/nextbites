@@ -14,7 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NextBites",
+  title: {
+    default: "NextBites - Discover and cook great recipes",
+    template: "%s | NextBites",
+  },
   description: "Discover and cook great recipes.",
 };
 
